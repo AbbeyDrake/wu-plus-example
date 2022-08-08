@@ -1,12 +1,17 @@
 .App-header {
-  background-color: #FBDD03;
-  min-height: 20vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
-  color: black;
+  background-color: black ;
+  min-height: 10vh;
+  width: 100%;
+  
+  
+}
+
+.header-font {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  color: #FBDD03;
 }
 
 .App {
@@ -16,6 +21,42 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.body-component{
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  color: white;
+  font-size: 1.5rem;
+  background-color: black ;
+  padding: 3rem;
+  min-height: 15rem;
+}
+
+.button {
+  background-color: #FBDD03;
+  font-size: 2.5rem;
+  padding: 2.5rem;
+  margin: 1rem;
+  min-height:12rem;
+  color: black
+}
+
+.category-header{
+  background-color: rgb(40, 37, 37) ;
+  min-height: 5vh;
+  width: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  padding: 2rem
+  
+}
+
+.font-link {
+  font-family: 'Poppins', sans-serif;
 }
 
 @media (prefers-reduced-motion: no-preference) {
