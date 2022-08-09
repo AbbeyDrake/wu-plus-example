@@ -1,4 +1,6 @@
 
+import { BrowserRouter } from 'react-router-dom';
+import Main from './components/Main'
 import Header from './components/Header'
 import Welcome from './components/Welcome';
 import Buttons from './components/buttons'
@@ -8,14 +10,22 @@ import './App.css';
 
 function App() {
   return (
-    <div>
-      <Header/>  
-      <Welcome/>
-      <Buttons/>
-      <Receivers/>
+    <BrowserRouter>
+    <div className="App">
+      <Main />
     </div>
+    </BrowserRouter>
+);
   
-  );
+  // return (
+  //   <div>
+  //     <Header/>  
+  //     <Welcome/>
+  //     <Buttons/>
+  //     <Receivers/>
+  //   </div>
+  
+  // );
 }
 
 export default App;

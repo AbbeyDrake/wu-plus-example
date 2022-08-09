@@ -6,14 +6,14 @@ import {Col, Row} from 'reactstrap'
 
 const Receivers = () => {
     return(
-        <div>
+        <div >
         <div className="category-header" >
              <span>Favorite Receivers</span>
         </div>
-        <Row className= 'ms-auto'>
+        <Row className= 'ms-auto body-component'>
             {FAVORITES.map((favorite)=>{
                 return(
-                <Col md='3' className='m-3' key = {favorite.id}>
+                <Col md='1' className='m-3' key = {favorite.id}>
                     <FavoritesCard favorite = {favorite}></FavoritesCard>
                 </Col>
                 )

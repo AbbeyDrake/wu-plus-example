@@ -1,18 +1,20 @@
-import {Card, CardImg, CardImgOverlay, CardTitle} from 'reactstrap'
-import WULogo from '../assets/wu.jpeg'
+import {Card, CardImg, CardImgOverlay, CardHeader, CardTitle} from 'reactstrap'
+// import WULogo from '../assets/wu.jpeg'
 
-const FavoritesCard = (props) => {
+
+//destructure favorite from props, then destructure favorite.image and favorite.name
+const FavoritesCard = ({favorite}) => {
+    const {image, name } = favorite;
     return (
-        <Card>
+        <Card style = {{width: "5rem"}}>
+            <CardHeader style={{fontSize:".6rem", color: "black"}}>
+                {name}
+            </CardHeader>
             <CardImg 
-                width='5rem'
-                src={WULogo}
-                alt={props.favorite.name}
+                
+                src={image}
+                alt={name}
             /> 
-            <CardImgOverlay>
-                <CardTitle style ={{color: "white"}}>{props.favorite.name}</CardTitle>
-            </CardImgOverlay>
-
         </Card>
     );
 }
