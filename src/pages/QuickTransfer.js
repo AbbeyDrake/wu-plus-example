@@ -1,18 +1,17 @@
 
-import Header from './components/Header'
-import Welcome from './components/Welcome';
-import Buttons from './components/buttons'
-import Receivers from './components/Receivers';
+import Header from '../components/Header'
+import Welcome from '../components/Welcome';
+import Receivers from '../components/Receivers';
+import ChooseAccount from '../components/ChooseAccount';
 
-import './App.css';
+import '../App.css';
 
 function QuickTransfer() {
   return (
     <div>
       <Header/>  
-      THIS IS A NEW PAGE
       <Welcome/>
-      <Buttons/>
+      <ChooseAccount/>
       <Receivers/>
     </div>
   );

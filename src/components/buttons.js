@@ -12,13 +12,13 @@ const Buttons = () => {
         <div className='row body-component'>
             
             <div className='col-md-4'>
-                <Button type='submit' className='button' onClick={navigateQuickTransfer}>Standard Transfer</Button>
+                <Button type='submit' className='button' >Standard Transfer</Button>
             </div>
             <div className='col-md-4'>
                 <Button type='submit' className='button'>WU+ Digital Banking</Button>
             </div>
             <div className='col-md-4'>
-                <Button type='submit' className='button' >Quick Transfer</Button>
+                <Button type='submit' className='button' onClick={navigateQuickTransfer}>Quick Transfer</Button>
             </div>
             
         </div>
