@@ -1,25 +1,30 @@
 import React, { useState } from 'react';
-import {Container, Col, Row, CardBody,  Dropdown,
+import Example from './Modal'
+import {Container, Col, Row,  Dropdown,
     DropdownToggle,
     DropdownMenu,
-    DropdownItem,} from 'reactstrap'
-import {Card, CardImg, CardImgOverlay, CardHeader, CardTitle} from 'reactstrap'
+    DropdownItem, Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap'
+
 
 function ChooseAccount({ direction, ...args }) {
+
         const [dropdownOpen, setDropdownOpen] = useState(false);
-      
         const toggle = () => setDropdownOpen((prevState) => !prevState);
+        const [modal, setModal] = useState(false);
+        const toggleModal = () => setModal(!modal);
+
     return(
         <div style={{backgroundColor: "black"}} >
-        <Container style={{backgroundColor: "white"}}>
+        
+        <Container className='choose-account-container'>
             <Row className='box-header'>
                 Send Money
             </Row>
             <Row>
-                <Col className='md-4'>
-                        <div className="d-flex p-5">
-                            <Dropdown isOpen={dropdownOpen} toggle={toggle} direction={direction}>
-                                <DropdownToggle caret>Choose an Account</DropdownToggle>
+                <Col>
+                        <div className="d-flex p-3">
+                            <Dropdown inNavbar isOpen={dropdownOpen} toggle={toggle} direction={direction}>
+                                <DropdownToggle caret size="lg">Choose an Account</DropdownToggle>
                                 <DropdownMenu {...args}>
                                 <DropdownItem>Checking **********7653</DropdownItem>
                                 <DropdownItem>Savings ***********9754</DropdownItem>
@@ -30,10 +35,35 @@ function ChooseAccount({ direction, ...args }) {
                          </div>
                         
                 </Col>
+               
+               
+                <Col>
+                <div style={{margin:"1rem"}} onClick={toggleModal}>
+                    <input placeholder="Search recipients"/>
+                    <Modal isOpen={modal} toggleModal={toggleModal} {...args}>
+                        
+                        <ModalBody>
+                        This user does not yet have a WU+ account. Send them a link to create an account?
+                        </ModalBody>
+                        <ModalFooter>
+                        <Button color="warning" onClick={toggleModal}>
+                            Send link through text
+                        </Button>{' '}
+                        <Button color="secondary" onClick={toggleModal}>
+                            Cancel
+                        </Button>
+                        </ModalFooter>
+                    </Modal>
+                </div>
+                {/* <div style={{margin:"1rem"}}>
+                <input placeholder="Search Users"/>
+                </div> */}
+                </Col>
             </Row>
+           
 
         </Container>
-       
+        
         
         </div>
     )

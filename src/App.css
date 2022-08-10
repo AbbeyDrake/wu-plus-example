@@ -1,3 +1,4 @@
+
 .App-header {
   background-color: black ;
   min-height: 10vh;
@@ -68,6 +69,12 @@
   
 }
 
+.choose-account-container{
+  background-color: "white";
+  width:"50%";
+  margin-bottom: 2rem
+}
+
 .font-link {
   font-family: 'Poppins', sans-serif;
 }
@@ -89,5 +96,22 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .choose-account-container {
+    width: 100%;
+    margin-bottom: 2rem;
+    background-color: white;
+  }
+}
+
+@media screen and (min-width: 771px) {
+  .choose-account-container {
+    width: 50%;
+    margin-bottom: 2rem;
+    background-color: white;
+    min-height: 13rem;
   }
 }
