@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import { Routes, Route} from "react-router-dom";
 import Home from '../pages/Home';
 import QuickTransfer from "../pages/QuickTransfer";
+import StandardTransfer from "../pages/StandardTransfer"
 
 const withRouter = (Component) => {
 	const Wrapper = (props) => {
@@ -20,8 +21,8 @@ function Main() {
         <Routes>
           <Route path='/home' element={<Home/>} />
           <Route path='/quicktransfer' element={<QuickTransfer/>}/>
-          {/* <Route path='/shop' component={ShopComponent} />
-          <Route path='/contact' component={ContactComponent} /> */}
+          <Route path='/standardtransfer' element={<StandardTransfer/>} />
+          {/* <Route path='/contact' component={ContactComponent} /> */}
           {/* <Navigate to='/home'/> */}
           <Route path='/' element={<Home/>}/>
         </Routes>

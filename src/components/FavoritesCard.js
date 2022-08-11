@@ -36,7 +36,7 @@ function FavoritesCard({favorite}, args){
                         id="message"
                         placeholder="Message" />
                 </FormGroup>
-                <Button>Submit</Button>
+                
             </Form>
         </ModalBody>
         <ModalFooter>

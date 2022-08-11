@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Example from './Modal'
 import {Container, Col, Row,  Dropdown,
     DropdownToggle,
@@ -7,11 +8,18 @@ import {Container, Col, Row,  Dropdown,
 
 
 function ChooseAccount({ direction, ...args }) {
-
+        //using useState hook to help functionality of "user has no account" modal
         const [dropdownOpen, setDropdownOpen] = useState(false);
         const toggle = () => setDropdownOpen((prevState) => !prevState);
+        //using useState to help functionality of "send money" modal
         const [modal, setModal] = useState(false);
         const toggleModal = () => setModal(!modal);
+        //using useNavigate hook to create a function that will navigate to another page
+        const navigate = useNavigate();
+        const navigateStandardTransfer = () => {
+        // 👇️ navigate to /
+        navigate('/standardtransfer');
+      };
 
     return(
         <div style={{backgroundColor: "black"}} >
@@ -43,11 +51,11 @@ function ChooseAccount({ direction, ...args }) {
                     <Modal isOpen={modal} toggleModal={toggleModal} {...args}>
                         
                         <ModalBody>
-                        This user does not yet have a WU+ account. Send them a link to create an account?
+                        This user does not yet have a WU+ account. Send them a link to create an account and input their banking information?
                         </ModalBody>
                         <ModalFooter>
                         <Button color="warning" onClick={toggleModal}>
-                            Send link through text
+                            Send sign-up link through text
                         </Button>{' '}
                         <Button color="secondary" onClick={toggleModal}>
                             Cancel
@@ -59,6 +67,14 @@ function ChooseAccount({ direction, ...args }) {
                 <input placeholder="Search Users"/>
                 </div> */}
                 </Col>
+            </Row>
+            <Row>
+                <Col className='offset-3'>
+                <Button style={{margin: "2rem"}}size="sm" onClick={navigateStandardTransfer}>
+                    Go to Standard Money Transfer
+                </Button>
+                </Col>
+               
             </Row>
            
 

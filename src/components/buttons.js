@@ -7,19 +7,24 @@ const Buttons = () => {
         // 👇️ navigate to /
         navigate('/quicktransfer');
       };
+      const navigateStandardTransfer = () => {
+        // 👇️ navigate to /
+        navigate('/standardtransfer');
+      };
     return(
 
         <div className='row body-component'>
-            
-            <div className='col-md-4'>
-                <Button type='submit' className='button' >Standard Transfer</Button>
-            </div>
-            <div className='col-md-4'>
+             <div className='col-md-4'>
                 <Button type='submit' className='button'>WU+ Digital Banking</Button>
             </div>
             <div className='col-md-4'>
                 <Button type='submit' className='button' onClick={navigateQuickTransfer}>Quick Transfer</Button>
             </div>
+            <div className='col-md-4'>
+                <Button type='submit' className='button' onClick={navigateStandardTransfer} >Standard Transfer</Button>
+            </div>
+           
+            
             
         </div>
     
