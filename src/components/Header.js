@@ -1,16 +1,51 @@
 import WULogo from '../assets/wu.jpeg'
-import { Navbar, NavbarBrand } from 'reactstrap';
+import {useState} from 'react'
+import { Navbar,
+        Button, 
+        NavbarBrand,
+        Collapse,
+        NavbarToggler,
+        Nav,
+        NavItem } from 'reactstrap';
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
+
+    const [menuOpen, setMenuOpen] = useState(false);
+
     return(
 
         <div>
         <Navbar dark color='black' sticky='top' expand='md'>
            
-                <NavbarBrand href='/'>
-                    <img style={{width:'10rem'}}src={WULogo} alt='WU logo' />
-                    || from Western Union
-                </NavbarBrand>
+            <NavbarBrand className='ms-3' href='/'>
+                <img style={{width:'10rem'}}src={WULogo} alt='WU logo' />
+                || from Western Union
+            </NavbarBrand>
+
+            <NavbarToggler onClick={()=> setMenuOpen(!menuOpen)}/>
+            <Collapse isOpen={menuOpen} navbar>
+                <Nav className='ms-auto' navbar>
+                    <NavItem>
+                        <Button color='warning' size='lg'>
+                                My WU+ Bank
+                        </Button>
+                    </NavItem>
+                    
+                    <NavItem> 
+                        <NavLink className='nav-link' to='/quicktransfer'>
+                            <i className='fa fa-home fa-lg'/> Quick Transfer
+                        </NavLink>
+                    </NavItem>
+
+                    <NavItem> 
+                        <NavLink className='nav-link' to='/quicktransfer'>
+                            <i className='fa fa-home fa-lg'/> Log Out
+                        </NavLink>
+                    </NavItem>
+                   
+                </Nav>
+            </Collapse>
             
         </Navbar>
         

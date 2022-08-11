@@ -1,4 +1,4 @@
-import {Button} from 'reactstrap'
+import {Button, Container, Row, Col} from 'reactstrap'
 import { useNavigate } from 'react-router-dom';
 
 const Buttons = () => {
@@ -12,21 +12,22 @@ const Buttons = () => {
         navigate('/standardtransfer');
       };
     return(
-
-        <div className='row body-component'>
-             <div className='col-md-4'>
-                <Button type='submit' className='button'>WU+ Digital Banking</Button>
-            </div>
-            <div className='col-md-4'>
-                <Button type='submit' className='button' onClick={navigateQuickTransfer}>Quick Transfer</Button>
-            </div>
-            <div className='col-md-4'>
-                <Button type='submit' className='button' onClick={navigateStandardTransfer} >Standard Transfer</Button>
-            </div>
-           
-            
-            
-        </div>
+        <Container>
+            <Row>
+                <Col className='md-4' >
+                    <div className='body-component'>
+                    <Button type='submit' className='button' onClick={navigateQuickTransfer}>Quick Transfer</Button>
+                    </div>
+                </Col>
+                <Col className='md-4'>
+                    <div className='body-component'>
+                        <Button type='submit' className='button' onClick={navigateStandardTransfer} >Standard Transfer</Button>
+                    </div>
+                </Col>
+                <Col className='md-4'>
+                </Col>
+            </Row>
+        </Container>
     
     )
 }

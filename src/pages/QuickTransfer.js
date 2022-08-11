@@ -1,4 +1,7 @@
 
+
+
+
 import Header from '../components/Header'
 import Welcome from '../components/Welcome';
 import Receivers from '../components/Receivers';
@@ -10,7 +13,9 @@ function QuickTransfer() {
   return (
     <div>
       <Header/>  
-      <Welcome/>
+      <div className='body-component container'>
+        Hi Username
+      </div>
       <ChooseAccount/>
       <Receivers/>
     </div>
