@@ -20,33 +20,31 @@ function ChooseAccount({ direction, ...args }) {
         // 👇️ navigate to /
         navigate('/standardtransfer');
       };
-
     return(
         <div style={{backgroundColor: "black"}} >
         
-        <Container className='choose-account-container'>
-            <Row className='box-header'>
+        <Container>
+            <div className='box'>
+            <Row className='box-text'>
                 Send Money
             </Row>
             <Row>
                 <Col>
-                        <div className="d-flex p-3">
-                            <Dropdown inNavbar isOpen={dropdownOpen} toggle={toggle} direction={direction}>
-                                <DropdownToggle caret size="lg">Choose an Account</DropdownToggle>
-                                <DropdownMenu {...args}>
-                                <DropdownItem>Checking **********7653</DropdownItem>
-                                <DropdownItem>Savings ***********9754</DropdownItem>
-                                <DropdownItem divider />
-                                <DropdownItem>Add New Account</DropdownItem>
-                                </DropdownMenu>
-                            </Dropdown>
-                         </div>
-                        
-                </Col>
-               
-               
+                <div className=" p-3">
+                    <Dropdown inNavbar isOpen={dropdownOpen} toggle={toggle} direction={direction}>
+                        <DropdownToggle caret size="lg">Choose an Account</DropdownToggle>
+                        <DropdownMenu {...args}>
+                        <DropdownItem>Checking **********7653</DropdownItem>
+                        <DropdownItem>Savings ***********9754</DropdownItem>
+                        <DropdownItem>WU + Account</DropdownItem>
+                        <DropdownItem divider />
+                        <DropdownItem>Add New Account</DropdownItem>
+                        </DropdownMenu>
+                    </Dropdown>
+                </div>
+                </Col>       
                 <Col>
-                <div style={{margin:"1rem"}} onClick={toggleModal}>
+                <div style={{margin:"1rem", paddingTop:".5rem"}} onClick={toggleModal}>
                     <input placeholder="Search recipients"/>
                     <Modal isOpen={modal} toggleModal={toggleModal} {...args}>
                         
@@ -63,21 +61,18 @@ function ChooseAccount({ direction, ...args }) {
                         </ModalFooter>
                     </Modal>
                 </div>
-                {/* <div style={{margin:"1rem"}}>
-                <input placeholder="Search Users"/>
-                </div> */}
                 </Col>
             </Row>
             <Row>
-                <Col className='offset-3'>
-                <Button style={{margin: "2rem"}}size="sm" onClick={navigateStandardTransfer}>
+                <Col>
+                <Button color="warning" style={{margin: "2rem"}}size="sm" onClick={navigateStandardTransfer}>
                     Go to Standard Money Transfer
                 </Button>
                 </Col>
                
             </Row>
            
-
+            </div>
         </Container>
         
         

@@ -6,7 +6,20 @@
   
   
 }
-
+.box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 20rem;
+}
+.box-text{
+  font-size: 2rem;
+  color: #FBDD03;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 1rem;
+  
+}
 .header-font {
   display: inline-block;
   vertical-align: middle;
@@ -39,10 +52,10 @@
 .button {
   background-color: #FBDD03;
   font-size: 1.8rem;
-  padding: 2.5rem;
+  padding: 2rem;
   margin: 1rem;
-  min-height:12rem;
-  max-height: 12rem;
+  min-height:10rem;
+  max-height: 10rem;
   color: black
 }
 
@@ -53,7 +66,7 @@
   text-align: center;
   font-size: 1.5rem;
   font-family: 'Poppins', sans-serif;
-  color: black;
+  color: white;
   padding: 1.5rem
 }
 .category-header{
