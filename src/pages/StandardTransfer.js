@@ -11,12 +11,13 @@ function StandardTransfer() {
   return (
     <div>
       <Header/>  
-      <Container>
-        <div className='body-component'>
-        Hi Username
-        </div></Container>
-      <div className="box" style={{color: 'white'}}>THIS IS A STANDARD TRANSFER - FORM GOES HERE</div>
-      <div className='category-header'>Pay Again</div>
+        <Container>
+            <div className='body-component'>
+            Hi Username
+            </div>
+        </Container>
+            <a target="_blank"className="box" style={{color: 'white'}} href="https://www.westernunion.com/us/en/web/send-money/start">NAVIGATE TO STANDARD TRANSFER</a>
+     <div className='category-header'>Pay Again</div>
       <Receivers/>
       
     </div>

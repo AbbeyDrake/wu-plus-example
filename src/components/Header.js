@@ -27,8 +27,8 @@ const Header = () => {
             <Collapse isOpen={menuOpen} navbar>
                 <Nav className='ms-auto' navbar>
                     <NavItem>
-                        <Button color='warning' size='lg'>
-                                My WU+ Bank
+                        <Button color='warning' size='lg'><a target="_blank"href='https://www.westernunion.com/de/en/wuplus.html'>My WU+ Bank</a>
+                                
                         </Button>
                     </NavItem>
                     

@@ -6,6 +6,10 @@
   
   
 }
+a {
+  text-decoration: none; 
+  color: black; 
+}
 .box{
   display: flex;
   align-items: center;
