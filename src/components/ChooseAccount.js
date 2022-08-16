@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Example from './Modal'
+import { ACCOUNTS } from '../shared/accounts';
 import {Container, Col, Row,  Dropdown,
     DropdownToggle,
     DropdownMenu,
@@ -8,6 +8,26 @@ import {Container, Col, Row,  Dropdown,
 
 
 function ChooseAccount({ direction, ...args }) {
+
+    //useState hook to set local state for which account is chosen and displayed
+    const [account, setAccount] = useState("Choose an Account")
+    const displayAccount = (e) => {setAccount(e.target.value); console.log(account)}
+
+        const DropdownOptions = () => {
+            return(
+                <div >
+                    {ACCOUNTS.map((item)=>{
+                        return(
+                        <DropdownItem key = {item.id} onClick ={displayAccount} value={`${item.name}:${item.acct}`}>
+                            {item.name}:{item.acct}
+                        </DropdownItem>
+                        )
+                    })}
+                </div>
+            )
+        }
+
+
         //using useState hook to help functionality of "user has no account" modal
         const [dropdownOpen, setDropdownOpen] = useState(false);
         const toggle = () => setDropdownOpen((prevState) => !prevState);
@@ -20,6 +40,7 @@ function ChooseAccount({ direction, ...args }) {
         // 👇️ navigate to /
         navigate('/standardtransfer');
       };
+
     return(
         <div style={{backgroundColor: "black"}} >
         
@@ -32,11 +53,9 @@ function ChooseAccount({ direction, ...args }) {
                 <Col>
                 <div className=" p-3">
                     <Dropdown inNavbar isOpen={dropdownOpen} toggle={toggle} direction={direction}>
-                        <DropdownToggle caret size="lg">Choose an Account</DropdownToggle>
+                        <DropdownToggle caret size="lg">{account}</DropdownToggle>
                         <DropdownMenu {...args}>
-                        <DropdownItem>Checking **********7653</DropdownItem>
-                        <DropdownItem>Savings ***********9754</DropdownItem>
-                        <DropdownItem>WU + Account</DropdownItem>
+                        {DropdownOptions()}
                         <DropdownItem divider />
                         <DropdownItem>Add New Account</DropdownItem>
                         </DropdownMenu>
