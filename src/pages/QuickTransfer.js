@@ -1,7 +1,4 @@
 
-
-
-
 import Header from '../components/Header'
 import Welcome from '../components/Welcome';
 import Receivers from '../components/Receivers';
@@ -20,10 +17,7 @@ function QuickTransfer() {
       <AccountBalance/>
       <div className='category-header'>Send Money</div>
       <ChooseAccount/>
-      <div className="category-header" >
-         <span>Favorite Receivers</span>
-    </div>
-      <Receivers/>
+      <Receivers title={`Favorite Receivers`}/>
     </div>
   );
 }

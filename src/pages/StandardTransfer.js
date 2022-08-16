@@ -17,8 +17,8 @@ function StandardTransfer() {
             </div>
         </Container>
             <a target="_blank"className="box" style={{color: 'white'}} href="https://www.westernunion.com/us/en/web/send-money/start">NAVIGATE TO STANDARD TRANSFER</a>
-     <div className='category-header'>Pay Again</div>
-      <Receivers/>
+            
+      <Receivers title = {"Pay Again"}/>
       
     </div>
   );

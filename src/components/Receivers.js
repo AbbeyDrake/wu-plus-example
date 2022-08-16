@@ -6,23 +6,21 @@ import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 
-const Receivers = () => {
+const Receivers = ({title}) => {
     
     return(
         <div >
-        
-        <Row className= 'ms-auto body-component'>
-            {FAVORITES.map((favorite)=>{
-                return(
-                <Col xs='2' lg='1' className='md-3 mb-3' key = {favorite.id}>
-                    <FavoritesCard favorite = {favorite}></FavoritesCard>
-                </Col>
-                )
-            })}
+            <div className='category-header'>{title}</div>
+            <Row className= 'ms-auto body-component'>
+                {FAVORITES.map((favorite)=>{
+                    return(
+                    <Col xs='2' lg='1' className='md-3 mb-3' key = {favorite.id}>
+                        <FavoritesCard favorite = {favorite}></FavoritesCard>
+                    </Col>
+                    )
+                })}
 
-        </Row>
-        
-        
+            </Row>
         </div>
     )
 }

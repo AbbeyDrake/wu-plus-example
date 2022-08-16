@@ -13,10 +13,7 @@ function Home() {
       <Header/>  
       <Welcome/>
       <Buttons/>
-        <div className="category-header" >
-         Favorite Receivers
-        </div>
-      <Receivers/>
+      <Receivers title = {"Favorite Receivers"}/>
     </div>
   );
 }
